@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title> Parallax Scrolling Website </title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+   <link rel = "stylesheet" href = "style.css" >
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+ </head>
+ <body>
+<div class="paralax">
+   <img src="stars.png" id="stars" class=" animate__animated animate__fadeInDown">
+   <img src="rocket.png" id="mountains_behind">
+   <h1 id="text" align="center">I Love You In<br><br>Every Universe</h1>
+   <a href="#" id="button">Explore</a>
+   <img src="planet1.png" id="moontains_front">
+  </div>
+
+<div class="timelinee" >
+<h6 align="center" id="text1">For U Hana:3
+  <br>
+  <br>
+  <span>
+    I know the distance between us may not always be easy. There are days when I miss you so much,
+    and I really want to be next to you, sharing laughter, stories, even just being together in silence.
+    But in every moment, I always remember how strong we are, how great our relationship is that can survive
+    even though there is distance that separates us.
+  </span>
+  <br>
+  <br>
+  <span>
+    I want to thank you, because you are always there for me, even though maybe you also feel the same
+    longing. Thank you for always strengthening me when I feel down, always giving me encouragement when
+    I need it, and always supporting my dreams even though we are far away. You are my source of strength, 
+    even from a distance. And I'm truly grateful to be able to call you my girlfriend.
+  </span>
+  <br>
+  <br>
+  <span>
+    Many say, LDR is difficult. I will not deny, there are difficult times we go through. But, every time 
+    I remember you, I feel like it's all worth it. Because in the end, our love is always stronger than this
+    longing. I believe, all of this will only make us closer, stronger, and more appreciative of every moment 
+    we will spend together.
+  </span>
+  <br>
+  <br>
+  <span>
+    I can't wait for the day when this distance is no longer an obstacle. But for now, I just want you to
+    know how much I appreciate every effort, patience, and love you give. Thank you for being the best 
+    girlfriend to me. Thank you for always believing that we can get through this together.
+  </span>
+  <br>
+  <br>
+  <span>
+    I love you, and I will always wait for you, no matter how far apart we are now. ❤️
+  </span>
+</h6>
+
+ 
+<script src="script.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    offset:400,
+    duration:1000
+  });
+</script>
+ <script>
+   let stars = document.getElementById('stars');
+   let mountains_behind = document.getElementById('mountains_behind');
+   let text = document.getElementById('text');
+   let button = document.getElementById('button');
+  
+  window.addEventListener ('scroll', function(){
+  let value = window.scrollY;
+  stars.style.left = value * 0.25 + 'px';
+  mountains_behind.style.top = value * -0.5 + 'px';
+  text.style.marginBottom = value * 1 + 'px';
+  button.style.marginBottom = value * 1 + 'px';})
+ </script>
+  </body>
+</html>
