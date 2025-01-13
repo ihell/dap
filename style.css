@@ -75,6 +75,93 @@ padding-top: 100px ;
   }
   
 }
+
+@media (max-width: 600px) {
+  /* Body */
+  body {
+    padding: 0;
+  }
+
+  /* Paralax */
+  .paralax {
+    padding: 50px 1em;
+    height: 70vh;
+  }
+
+  #text {
+    font-size: 2em;
+    line-height: 30px;
+    bottom: -50px;
+    text-align: center;
+  }
+
+  #button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    transform: translateY(120px);
+  }
+
+  /* Timeline */
+  .timeline {
+    width: 100%;
+    padding: 0;
+  }
+
+  .timeline:before {
+    left: 20px;
+  }
+
+  .direction-l,
+  .direction-r {
+    width: 100%;
+    float: none;
+    text-align: left;
+    padding-left: 40px;
+  }
+
+  .direction-l .flag,
+  .direction-r .flag {
+    text-align: left;
+  }
+
+  .direction-l .time-wrapper,
+  .direction-r .time-wrapper {
+    float: none;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .direction-l .desc,
+  .direction-r .desc {
+    margin: 0.5em 0;
+    font-size: 0.9em;
+  }
+
+  /* Cards */
+  .page-content {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+
+  .card {
+    height: auto;
+    padding: 1em;
+  }
+
+  /* Gallery */
+  .gallery {
+    padding: 2em 1em;
+  }
+
+  /* Sub-title */
+  .sub-title {
+    font-size: 1.5em;
+    margin: 1em;
+    text-align: center;
+  }
+}
+
+
 #text{
 	position: absolute;
 	font-size: 4.2em;
