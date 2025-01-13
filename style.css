@@ -619,3 +619,8 @@ p
 }
 
 /* ================ Timeline Media Queries ================ */
+
+#timeline {
+  scroll-margin-top: 20px; /* Agar ada jarak setelah scroll */
+  padding: 10px;
+}

@@ -112,13 +112,13 @@ function handleItemClick(id) {
     0.5,
     {
       opacity: 0,
-      left: 0,
+      left: "0px", // Pastikan nilai left menggunakan string dengan satuan.
       top: "30vh",
       width: "100%",
-      textAlign: "center" },
-
-    "-=.35").
-
+      textAlign: "center"
+    },
+    "-=.35"
+    ).
     set(itemExcerpt, { display: "none" }).
     to(unSelectedItems, 0.2, { opacity: 0 }, "-=.35").
     add("itemExpand").
@@ -128,7 +128,6 @@ function handleItemClick(id) {
     0.8,
     { y: itemOffsetTop, width: "100%", height: "60vh" },
     "itemExpand").
-
     to(itemHeadline, 1, { top: 0, height: "100vh", padding: 0 }, "-=.3").
     to(itemPhoto, 1, { borderRadius: 0, height: "100vh" }, "itemExpand").
     add("resize").
@@ -139,10 +138,9 @@ function handleItemClick(id) {
       height: 100,
       opacity: 1,
       fontSize: "calc(.4vw + 10px)",
-      backgroundColor: "rgba(45, 45, 45, 0.8)" },
-
+      backgroundColor: "rgba(45, 45, 45, 0.8)"
+    },
     "resize").
-
     to(itemPhoto, 1, { height: 100 }, "resize").
     set(itemPhoto, { height: 100, position: "fixed", top: 0 }).
     set(itemHeadline, { position: "fixed", top: 0 }).
@@ -150,8 +148,8 @@ function handleItemClick(id) {
       y: 0,
       height: "auto",
       marginTop: 0,
-      clearProps: "transform" }).
-
+      clearProps: "transform"
+    }).
     set(unSelectedItems, { display: "none" }).
     set(timeline, { paddingBottom: 0 }).
     set(itemContent, { display: "block", top: 100 }).
@@ -163,7 +161,8 @@ function handleItemClick(id) {
     { opacity: 0, y: 20 },
     { opacity: 1, y: 0 },
     0.1,
-    "-=.3");
+    "-=.3"
+    );
 
   }
 }
@@ -189,12 +188,29 @@ backButton.addEventListener("click", () => {
         });
 
         TweenMax.set(itemHeadlines, { clearProps: "all" });
-      } });
-
+      }
+    });
 
     overlayTL.
     to(selectedItem, 0.3, { opacity: 0 }).
     to(overlay, 0.6, { height: "110vh", ease: Expo.easeOut }, "+=.2").
     to(overlay, 0.6, { height: 0, top: "100%", ease: Expo.easeOut });
+  }
+});
+
+// Menambahkan fungsi untuk tombol Explore
+document.addEventListener('DOMContentLoaded', function() {
+  const button = document.getElementById('button');
+  if (button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      const timeline = document.getElementById('timeline');
+      if (timeline) {
+        window.scrollTo({
+          top: timeline.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
   }
 });

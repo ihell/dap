@@ -12,11 +12,11 @@
     <img src="stars.png" id="stars" class="animate__animated animate__fadeInDown">
     <img src="rocket.png" id="mountains_behind">
     <h1 id="text" align="center">I Love You In<br><br>Every Universe</h1>
-    <a href="#" id="button">Explore</a>
+    <button id="button">Explore</button>
     <img src="planet1.png" id="moontains_front">
   </div>
 
-  <div class="timelinee">
+  <div class="timelinee" id="target-section">
     <h6 align="center" id="text1">For U Hana:3
       <br>
       <br>
@@ -64,20 +64,33 @@
       offset: 400,
       duration: 1000
     });
-  </script>
-  <script>
+
     let stars = document.getElementById('stars');
     let mountains_behind = document.getElementById('mountains_behind');
     let text = document.getElementById('text');
     let button = document.getElementById('button');
+    let targetSection = document.getElementById('target-section');
 
     window.addEventListener('scroll', function() {
       let value = window.scrollY;
-      stars.style.left = value * 0.25 + 'px';
-      mountains_behind.style.top = value * -0.5 + 'px';
-      text.style.marginTop = value * 0.5 + 'px'; // Efek paralaks pada teks
-      button.style.marginTop = value * 0.5 + 'px'; // Efek paralaks pada tombol
+      if (stars) stars.style.left = value * 0.25 + 'px';
+      if (mountains_behind) mountains_behind.style.top = value * -0.5 + 'px';
+      if (text) text.style.marginTop = value * 0.5 + 'px';
+      if (button) button.style.marginTop = value * 0.5 + 'px';
     });
+
+    // Smooth scroll to target section
+    if (button && targetSection) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.scrollTo({
+          top: targetSection.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    } else {
+      console.warn("Button or target section is not available.");
+    }
   </script>
 </body>
 </html>
